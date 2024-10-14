@@ -35,6 +35,7 @@
             // 
             // textBoxRules
             // 
+            textBoxRules.ForeColor = SystemColors.WindowText;
             textBoxRules.Location = new Point(180, 172);
             textBoxRules.Multiline = true;
             textBoxRules.Name = "textBoxRules";

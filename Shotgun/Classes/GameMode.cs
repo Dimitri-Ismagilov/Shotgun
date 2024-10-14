@@ -10,37 +10,38 @@ namespace Shotgun.Classes
     {
         public Player Computer { get; set; }
         public Player User { get; set; }
+        public event Action<string> GameLog;
 
         public GameMode()
         {
             User = new Player();
             Computer = new Player();
         }
-        public void GameLog(string message)
-        { 
-        }
         public void GamePlay(string userMove)
         {
-            string log = "";
             string computerMove = ComputerMove();
+            string logMessage = $" Spelare: {userMove} VS Dator:{computerMove}";
             if (userMove == "Ladda")
             {
                 if (computerMove == "Ladda")
                 {
                     User.Charge();
                     Computer.Charge();
+                    GameLog.Invoke(logMessage);
                         
                         
                 }
                 else if (computerMove == "Blocka")
                 {
                     User.Charge();
+                    GameLog.Invoke(logMessage);
                 }
                 else if (computerMove == "Skjuta")
                 {
                     Computer.Shoot();
                     GameOver gameOver = new GameOver();
                     gameOver.ShowDialog();
+                    GameLog.Invoke(logMessage);
                 }
             }
             else if (userMove == "Blocka")
@@ -48,14 +49,16 @@ namespace Shotgun.Classes
                 if (computerMove == "Ladda")
                 {
                     Computer.Charge();
+                    GameLog.Invoke(logMessage);
                 }
                 else if (computerMove == "Blocka")
                 {
-                    //ingenting händer
+                    GameLog.Invoke(logMessage);
                 }
                 else if (computerMove == "Skjuta")
                 {
                     Computer.Shoot();
+                    GameLog.Invoke(logMessage);
                 }
             }
             else if(userMove == "Skjuta")
@@ -63,17 +66,20 @@ namespace Shotgun.Classes
                 if (computerMove == "Ladda")
                 {
                     User.Shoot();
+                    GameLog.Invoke(logMessage);
                     UserWon userWin = new UserWon();
                     userWin.ShowDialog();
                 }
                 else if (computerMove == "Blocka")
                 {
                     User.Shoot();
+                    GameLog.Invoke(logMessage);
                 }
                 else if (computerMove == "Skjuta")
                 {
                     User.Shoot();
                     Computer.Shoot();
+                    GameLog.Invoke(logMessage);
                 }
 
             }
@@ -84,6 +90,7 @@ namespace Shotgun.Classes
             List<string> computerMove = new List<string> { "Ladda", "Blocka" };
             if (Computer.Bullets > 2)
             {
+                GameLog.Invoke("Dator: SHOTGUN");
                 GameOver gameOver = new GameOver();
                 gameOver.ShowDialog();
             }
