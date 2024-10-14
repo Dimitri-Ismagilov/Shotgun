@@ -8,50 +8,87 @@ namespace Shotgun.Classes
 {
     public class GameMode
     {
-        public Computer Computer { get; set; }
-        public User User { get; set; }
-        private Random random;
+        public Player Computer { get; set; }
+        public Player User { get; set; }
+
         public GameMode()
         {
+            User = new Player();
+            Computer = new Player();
+        }
             public void GamePlay(string userMove)
             {
                 string computerMove = ComputerMove();
-                if (playerMove)
+                if (userMove == "Ladda")
                 {
-                    User.Charge()
+                    if (computerMove == "Ladda")
+                    {
+                        User.Charge();
+                        Computer.Charge();
+                    }
+                    else if (computerMove == "Blocka")
+                    {
+                        User.Charge();
+                    }
+                    else if (computerMove == "Skjuta")
+                    {
+                        Computer.Shoot();
+                        //lägga en poäng till Dator
+                    }
                 }
-            }
-
-            Computer computer = new Computer();
-            User user = new User();
-            random = new Random();
-
-            private void ComputerMove()
-            {
-                int action = random.Next(0,3);
-                return action;
+                else if (userMove == "Blocka")
                 {
-                    0 = "Ladda";
-                    1 = 
+                    if (computerMove == "Ladda")
+                    {
+                        Computer.Charge();
+                    }
+                    else if (computerMove == "Blocka")
+                    {
+                        //ingenting händer
+                    }
+                    else if (computerMove == "Skjuta")
+                    {
+                        Computer.Shoot();
+                    }
+                }
+                else if(userMove == "Skjuta")
+                {
+                    if (computerMove == "Ladda")
+                    {
+                        User.Shoot();
+                        //lägga en poäng till
+                    }
+                    else if (computerMove == "Blocka")
+                    {
+                        User.Shoot();
+                    }
+                    else if (computerMove == "Skjuta")
+                    {
+                        User.Shoot();
+                        Computer.Shoot();
+                    }
 
                 }
+
             }
-
-
-
-
-
-
-
-            private List<Move> playerMove = new List<Move>();
-            Computer computerMove = new Computer();
-            string computerUnswer = computerMove.GetRandomMove();
-
-            public void GamePlay()
+            private string ComputerMove()
             {
+                List<string> computerMove = new List<string> { "Ladda", "Blocka" };
+                //if (Computer.Shotgung())
+                //{
+                //    computerMove = "Shotgun";
 
-                
+                //}
+                //else
+                //{
+                    if (Computer.CanShoot())
+                    {
+                        computerMove.Add("Skjuta");
+                    }
+                //}
+                Random random = new Random();
+                int index = random.Next(computerMove.Count);
+                return computerMove[index];
             }
-        }
     }
 }

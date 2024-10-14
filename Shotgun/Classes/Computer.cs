@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 
 namespace Shotgun.Classes
 {
-    public class Computer : Player
-        private Random random;
-
+    public class Computer
     {
+        public Player ComputerBullets { get; set; }
+
+        //private Random random;
+        //{
 
 
-        private void ComputerMove()
-        {
+        //    private void ComputerMove()
+        //    {
 
-        random = new Random();
-        int computerShoot = 2;
-        int computerCharge = 0;
-        int computerBlock = 1;
-        string computerShotgun = "Dator använde Shotgun";
-        }
+        //        random = new Random();
+        //        int computerShoot = 2;
+        //        int computerCharge = 0;
+        //        int computerBlock = 1;
+        //        string computerShotgun = "Dator använde Shotgun";
+        //    }
+        //}
     }
     
 

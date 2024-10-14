@@ -4,39 +4,45 @@ namespace Shotgun
 {
     public partial class Shotgun : Form
     {
-        private GameMode move = new GameMode();
-        private User playerMove = new User();
+        private GameMode move;
         public Shotgun()
         {
             InitializeComponent();
+            move = new GameMode();
+
         }
         private void buttonGo_Click(object sender, EventArgs e)
         {
             if (radioButtonCharge.Checked)
             {
                 move.GamePlay("Ladda");
+                UpdateShoots();
 
             }
             else if (radioButtonBlock.Checked)
             {
                 move.GamePlay("Blocka");
-
+                UpdateShoots();
             }
             else if (radioButtonShoot.Checked)
             {
                 move.GamePlay("Sjut");
-
+                UpdateShoots();
             }
             else if (radioButtonShotgun.Checked)
             {
-                playerMove = new Move();
-                playerMove.Shotgun = playerMove.Shotgun + 1;
+                
             }
         }
 
         private void buttonRules_Click(object sender, EventArgs e)
         {
             MessageBox.Show("");
+        }
+        private void UpdateShoots()
+        {
+            listBoxUser.Text = $"Skott:{move.User.Bullets}";
+            listBoxComputer.Text = $"Skott: {move.Computer.Bullets}";
         }
     }
 }
