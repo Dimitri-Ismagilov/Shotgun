@@ -75,6 +75,7 @@
             ClientSize = new Size(647, 647);
             Controls.Add(groupBoxRestart);
             Name = "GameOver";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Game Over";
             groupBoxRestart.ResumeLayout(false);
             ResumeLayout(false);

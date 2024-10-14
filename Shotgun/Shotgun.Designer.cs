@@ -41,9 +41,11 @@
             labelComputerBullets = new Label();
             groupBoxGameLog = new GroupBox();
             listBoxGameLog = new ListBox();
+            pictureBox1 = new PictureBox();
             groupBoxUser.SuspendLayout();
             groupBoxComputer.SuspendLayout();
             groupBoxGameLog.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // radioButtonShotgun
@@ -124,7 +126,7 @@
             groupBoxUser.Controls.Add(radioButtonBlock);
             groupBoxUser.Controls.Add(radioButtonCharge);
             groupBoxUser.Controls.Add(radioButtonShoot);
-            groupBoxUser.Location = new Point(50, 260);
+            groupBoxUser.Location = new Point(40, 260);
             groupBoxUser.Name = "groupBoxUser";
             groupBoxUser.Size = new Size(136, 241);
             groupBoxUser.TabIndex = 10;
@@ -142,8 +144,9 @@
             // 
             // groupBoxComputer
             // 
+            groupBoxComputer.Controls.Add(pictureBox1);
             groupBoxComputer.Controls.Add(labelComputerBullets);
-            groupBoxComputer.Location = new Point(443, 260);
+            groupBoxComputer.Location = new Point(480, 260);
             groupBoxComputer.Name = "groupBoxComputer";
             groupBoxComputer.Size = new Size(136, 241);
             groupBoxComputer.TabIndex = 12;
@@ -162,9 +165,9 @@
             // groupBoxGameLog
             // 
             groupBoxGameLog.Controls.Add(listBoxGameLog);
-            groupBoxGameLog.Location = new Point(250, 260);
+            groupBoxGameLog.Location = new Point(214, 260);
             groupBoxGameLog.Name = "groupBoxGameLog";
-            groupBoxGameLog.Size = new Size(136, 241);
+            groupBoxGameLog.Size = new Size(227, 241);
             groupBoxGameLog.TabIndex = 13;
             groupBoxGameLog.TabStop = false;
             groupBoxGameLog.Text = "Spellogg";
@@ -175,8 +178,18 @@
             listBoxGameLog.ItemHeight = 15;
             listBoxGameLog.Location = new Point(6, 22);
             listBoxGameLog.Name = "listBoxGameLog";
-            listBoxGameLog.Size = new Size(124, 214);
+            listBoxGameLog.Size = new Size(215, 214);
             listBoxGameLog.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(6, 37);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(124, 198);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
             // 
             // Shotgun
             // 
@@ -198,6 +211,7 @@
             groupBoxComputer.ResumeLayout(false);
             groupBoxComputer.PerformLayout();
             groupBoxGameLog.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -214,5 +228,6 @@
         private Label labelComputerBullets;
         private GroupBox groupBoxGameLog;
         private ListBox listBoxGameLog;
+        private PictureBox pictureBox1;
     }
 }

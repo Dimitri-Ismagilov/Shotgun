@@ -13,6 +13,7 @@ namespace Shotgun
         {
             InitializeComponent();
             move = new GameMode();
+            move.GameLog += UpdateLog;
 
         }
         private void buttonGo_Click(object sender, EventArgs e)
@@ -37,6 +38,7 @@ namespace Shotgun
             {
                 if (UserBullets > 2)
                 {
+                    listBoxGameLog.Items.Add("Spelare: SHOTGUN");
                     UserWon userWon = new UserWon();
                     userWon.ShowDialog();
                 }
@@ -59,6 +61,11 @@ namespace Shotgun
             int ComputerBullets = move.Computer.Bullets;
             labelUserBullets.Text = $"Skott:{UserBullets}";
             labelComputerBullets.Text = $"Skott: {ComputerBullets}";
+        }
+        private void UpdateLog(string logMessenge)
+        {
+            listBoxGameLog.Items.Add(logMessenge);
+            listBoxGameLog.TopIndex = listBoxGameLog.Items.Count - 1;
         }
     }
 }
