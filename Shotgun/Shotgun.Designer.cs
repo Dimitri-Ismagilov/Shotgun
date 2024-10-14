@@ -28,23 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Shotgun));
             radioButtonShotgun = new RadioButton();
             radioButtonBlock = new RadioButton();
             radioButtonCharge = new RadioButton();
             radioButtonShoot = new RadioButton();
             buttonGo = new Button();
-            textBoxGameLog = new TextBox();
             buttonRules = new Button();
-            pictureBoxComputer = new PictureBox();
-            pictureBoxPlayer = new PictureBox();
             groupBoxUser = new GroupBox();
-            listBoxUser = new ListBox();
+            labelUserBullets = new Label();
             groupBoxComputer = new GroupBox();
-            listBoxComputer = new ListBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxComputer).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxPlayer).BeginInit();
+            labelComputerBullets = new Label();
+            groupBoxGameLog = new GroupBox();
+            listBoxGameLog = new ListBox();
             groupBoxUser.SuspendLayout();
             groupBoxComputer.SuspendLayout();
+            groupBoxGameLog.SuspendLayout();
             SuspendLayout();
             // 
             // radioButtonShotgun
@@ -106,15 +105,6 @@
             buttonGo.UseVisualStyleBackColor = true;
             buttonGo.Click += buttonGo_Click;
             // 
-            // textBoxGameLog
-            // 
-            textBoxGameLog.Location = new Point(374, 211);
-            textBoxGameLog.Margin = new Padding(2);
-            textBoxGameLog.Multiline = true;
-            textBoxGameLog.Name = "textBoxGameLog";
-            textBoxGameLog.Size = new Size(145, 241);
-            textBoxGameLog.TabIndex = 2;
-            // 
             // buttonRules
             // 
             buttonRules.Location = new Point(11, 567);
@@ -126,86 +116,89 @@
             buttonRules.UseVisualStyleBackColor = true;
             buttonRules.Click += buttonRules_Click;
             // 
-            // pictureBoxComputer
-            // 
-            pictureBoxComputer.Location = new Point(6, 56);
-            pictureBoxComputer.Name = "pictureBoxComputer";
-            pictureBoxComputer.Size = new Size(126, 157);
-            pictureBoxComputer.TabIndex = 8;
-            pictureBoxComputer.TabStop = false;
-            // 
-            // pictureBoxPlayer
-            // 
-            pictureBoxPlayer.Location = new Point(218, 267);
-            pictureBoxPlayer.Name = "pictureBoxPlayer";
-            pictureBoxPlayer.Size = new Size(126, 157);
-            pictureBoxPlayer.TabIndex = 9;
-            pictureBoxPlayer.TabStop = false;
-            // 
             // groupBoxUser
             // 
+            groupBoxUser.Controls.Add(labelUserBullets);
             groupBoxUser.Controls.Add(radioButtonShotgun);
-            groupBoxUser.Controls.Add(listBoxUser);
             groupBoxUser.Controls.Add(buttonGo);
             groupBoxUser.Controls.Add(radioButtonBlock);
             groupBoxUser.Controls.Add(radioButtonCharge);
             groupBoxUser.Controls.Add(radioButtonShoot);
-            groupBoxUser.Location = new Point(59, 211);
+            groupBoxUser.Location = new Point(50, 260);
             groupBoxUser.Name = "groupBoxUser";
             groupBoxUser.Size = new Size(136, 241);
             groupBoxUser.TabIndex = 10;
             groupBoxUser.TabStop = false;
             groupBoxUser.Text = "Spelare";
             // 
-            // listBoxUser
+            // labelUserBullets
             // 
-            listBoxUser.FormattingEnabled = true;
-            listBoxUser.ItemHeight = 15;
-            listBoxUser.Location = new Point(5, 22);
-            listBoxUser.Name = "listBoxUser";
-            listBoxUser.Size = new Size(123, 19);
-            listBoxUser.TabIndex = 11;
+            labelUserBullets.AutoSize = true;
+            labelUserBullets.Location = new Point(34, 19);
+            labelUserBullets.Name = "labelUserBullets";
+            labelUserBullets.Size = new Size(46, 15);
+            labelUserBullets.TabIndex = 13;
+            labelUserBullets.Text = "Skott: 0";
             // 
             // groupBoxComputer
             // 
-            groupBoxComputer.Controls.Add(listBoxComputer);
-            groupBoxComputer.Controls.Add(pictureBoxComputer);
-            groupBoxComputer.Location = new Point(562, 211);
+            groupBoxComputer.Controls.Add(labelComputerBullets);
+            groupBoxComputer.Location = new Point(443, 260);
             groupBoxComputer.Name = "groupBoxComputer";
             groupBoxComputer.Size = new Size(136, 241);
             groupBoxComputer.TabIndex = 12;
             groupBoxComputer.TabStop = false;
             groupBoxComputer.Text = "Dator";
             // 
-            // listBoxComputer
+            // labelComputerBullets
             // 
-            listBoxComputer.FormattingEnabled = true;
-            listBoxComputer.ItemHeight = 15;
-            listBoxComputer.Location = new Point(6, 22);
-            listBoxComputer.Name = "listBoxComputer";
-            listBoxComputer.Size = new Size(123, 19);
-            listBoxComputer.TabIndex = 11;
+            labelComputerBullets.AutoSize = true;
+            labelComputerBullets.Location = new Point(44, 19);
+            labelComputerBullets.Name = "labelComputerBullets";
+            labelComputerBullets.Size = new Size(46, 15);
+            labelComputerBullets.TabIndex = 9;
+            labelComputerBullets.Text = "Skott: 0";
+            // 
+            // groupBoxGameLog
+            // 
+            groupBoxGameLog.Controls.Add(listBoxGameLog);
+            groupBoxGameLog.Location = new Point(250, 260);
+            groupBoxGameLog.Name = "groupBoxGameLog";
+            groupBoxGameLog.Size = new Size(136, 241);
+            groupBoxGameLog.TabIndex = 13;
+            groupBoxGameLog.TabStop = false;
+            groupBoxGameLog.Text = "Spellogg";
+            // 
+            // listBoxGameLog
+            // 
+            listBoxGameLog.FormattingEnabled = true;
+            listBoxGameLog.ItemHeight = 15;
+            listBoxGameLog.Location = new Point(6, 22);
+            listBoxGameLog.Name = "listBoxGameLog";
+            listBoxGameLog.Size = new Size(124, 214);
+            listBoxGameLog.TabIndex = 0;
             // 
             // Shotgun
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(916, 722);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(647, 647);
+            Controls.Add(groupBoxGameLog);
             Controls.Add(groupBoxComputer);
             Controls.Add(groupBoxUser);
-            Controls.Add(pictureBoxPlayer);
             Controls.Add(buttonRules);
-            Controls.Add(textBoxGameLog);
             Margin = new Padding(2);
             Name = "Shotgun";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Shotgun";
-            ((System.ComponentModel.ISupportInitialize)pictureBoxComputer).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxPlayer).EndInit();
             groupBoxUser.ResumeLayout(false);
             groupBoxUser.PerformLayout();
             groupBoxComputer.ResumeLayout(false);
+            groupBoxComputer.PerformLayout();
+            groupBoxGameLog.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -214,13 +207,12 @@
         private RadioButton radioButtonCharge;
         private RadioButton radioButtonShoot;
         private Button buttonGo;
-        private TextBox textBoxGameLog;
         private Button buttonRules;
-        private PictureBox pictureBoxComputer;
-        private PictureBox pictureBoxPlayer;
         private GroupBox groupBoxUser;
-        private ListBox listBoxUser;
         private GroupBox groupBoxComputer;
-        private ListBox listBoxComputer;
+        private Label labelUserBullets;
+        private Label labelComputerBullets;
+        private GroupBox groupBoxGameLog;
+        private ListBox listBoxGameLog;
     }
 }

@@ -1,3 +1,4 @@
+using Microsoft.VisualBasic.ApplicationServices;
 using Shotgun.Classes;
 
 namespace Shotgun
@@ -5,6 +6,9 @@ namespace Shotgun
     public partial class Shotgun : Form
     {
         private GameMode move;
+        public int UserBullets = 0;
+        public int ComputerBullets = 0;
+
         public Shotgun()
         {
             InitializeComponent();
@@ -26,23 +30,35 @@ namespace Shotgun
             }
             else if (radioButtonShoot.Checked)
             {
-                move.GamePlay("Sjut");
+                move.GamePlay("Skjuta");
                 UpdateShoots();
             }
             else if (radioButtonShotgun.Checked)
             {
+                if (UserBullets > 2)
+                {
+                    UserWon userWon = new UserWon();
+                    userWon.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Du måste ha minst 3 skott");
+                }
                 
             }
         }
 
         private void buttonRules_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("");
+            Rules rules = new Rules();
+            rules.ShowDialog();
         }
         private void UpdateShoots()
         {
-            listBoxUser.Text = $"Skott:{move.User.Bullets}";
-            listBoxComputer.Text = $"Skott: {move.Computer.Bullets}";
+            int UserBullets = move.User.Bullets;
+            int ComputerBullets = move.Computer.Bullets;
+            labelUserBullets.Text = $"Skott:{UserBullets}";
+            labelComputerBullets.Text = $"Skott: {ComputerBullets}";
         }
     }
 }

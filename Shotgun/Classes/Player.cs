@@ -32,7 +32,9 @@ namespace Shotgun.Classes
         {
             if (Bullets > 2)
             {
-                Bullets -= 2;
+                Bullets -= 3;
+                //Bullets--;
+                //Bullets--;
             }
         }
 

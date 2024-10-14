@@ -121,4 +121,25 @@
   <data name="openart-image_JoFdNMOn_1728033976605_raw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\openart-image_JoFdNMOn_1728033976605_raw.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HUD-MachineGun-Ammo-User" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HUD-MachineGun-Ammo-User.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shield" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shield.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HUD-MachineGun-Ammo-Computer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HUD-MachineGun-Ammo-Computer.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChargeShotRedOrangeComputer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChargeShotRedOrangeComputer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChargeShotRedOrangeUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChargeShotRedOrangeUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShotgunUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShotgunUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShotgunComputer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShotgunComputer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
