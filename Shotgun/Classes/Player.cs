@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shotgun.Classes
 {
-    public abstract class Player
+    public class Player
     {
         public int Bullets { get; set; }
         public Player()
@@ -27,6 +27,15 @@ namespace Shotgun.Classes
         public bool CanShoot()
         {
             return Bullets > 0;
+        }
+        public void Shotgung()
+        {
+            if (Bullets > 2)
+            {
+                Bullets -= 3;
+                //Bullets--;
+                //Bullets--;
+            }
         }
 
     }

@@ -63,9 +63,79 @@ namespace Shotgun.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChargeShotRedOrangeComputer {
+            get {
+                object obj = ResourceManager.GetObject("ChargeShotRedOrangeComputer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChargeShotRedOrangeUser {
+            get {
+                object obj = ResourceManager.GetObject("ChargeShotRedOrangeUser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HUD_MachineGun_Ammo_Computer {
+            get {
+                object obj = ResourceManager.GetObject("HUD-MachineGun-Ammo-Computer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HUD_MachineGun_Ammo_User {
+            get {
+                object obj = ResourceManager.GetObject("HUD-MachineGun-Ammo-User", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap openart_image_JoFdNMOn_1728033976605_raw {
             get {
                 object obj = ResourceManager.GetObject("openart-image_JoFdNMOn_1728033976605_raw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shield {
+            get {
+                object obj = ResourceManager.GetObject("shield", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ShotgunComputer {
+            get {
+                object obj = ResourceManager.GetObject("ShotgunComputer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ShotgunUser {
+            get {
+                object obj = ResourceManager.GetObject("ShotgunUser", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
