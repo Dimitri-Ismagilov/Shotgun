@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Shotgun.Classes
+﻿namespace Shotgun.Classes
 {
     public class GameMode
     {
@@ -63,28 +57,46 @@ namespace Shotgun.Classes
             }
             else if(userMove == "Skjuta")
             {
-                if (computerMove == "Ladda")
+                if (User.CanShoot())
                 {
-                    User.Shoot();
-                    GameLog.Invoke(logMessage);
-                    UserWon userWin = new UserWon();
-                    userWin.ShowDialog();
-                }
-                else if (computerMove == "Blocka")
+                    if (computerMove == "Ladda")
+                    {
+                        User.Shoot();
+                        GameLog.Invoke(logMessage);
+                        UserWon userWin = new UserWon();
+                        userWin.ShowDialog();
+                    }
+                    else if (computerMove == "Blocka")
+                    {
+                        User.Shoot();
+                        GameLog.Invoke(logMessage);
+                    }
+                    else if (computerMove == "Skjuta")
+                    {
+                        User.Shoot();
+                        Computer.Shoot();
+                        GameLog.Invoke(logMessage);
+                    }
+                }else
                 {
-                    User.Shoot();
-                    GameLog.Invoke(logMessage);
+                    MessageBox.Show("Du har inga skott");
                 }
-                else if (computerMove == "Skjuta")
-                {
-                    User.Shoot();
-                    Computer.Shoot();
-                    GameLog.Invoke(logMessage);
-                }
-
             }
-
+            else if (userMove == "Shotgun")
+            {
+                if (User.Shotgun())
+                {
+                    User.Shotgun();
+                    GameLog.Invoke(logMessage);
+                    UserWon userWon = new UserWon();
+                    userWon.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Du har inte tillräckligt med skott");
+                }
             }
+        }
         private string ComputerMove()
         {
             List<string> computerMove = new List<string> { "Ladda", "Blocka" };
