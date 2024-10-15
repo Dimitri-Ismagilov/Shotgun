@@ -1,4 +1,3 @@
-using Microsoft.VisualBasic.ApplicationServices;
 using Shotgun.Classes;
 
 namespace Shotgun
@@ -30,23 +29,14 @@ namespace Shotgun
                 UpdateShoots();
             }
             else if (radioButtonShoot.Checked)
-            {
-                move.GamePlay("Skjuta");
-                UpdateShoots();
+            {       
+                    move.GamePlay("Skjuta");
+                    UpdateShoots();
             }
             else if (radioButtonShotgun.Checked)
             {
-                if (UserBullets > 2)
-                {
-                    listBoxGameLog.Items.Add("Spelare: SHOTGUN");
-                    UserWon userWon = new UserWon();
-                    userWon.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Du måste ha minst 3 skott");
-                }
-                
+                    move.GamePlay("Shotgun");
+                    UpdateShoots();
             }
         }
 

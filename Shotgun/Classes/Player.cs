@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Shotgun.Classes
+﻿namespace Shotgun.Classes
 {
     public class Player
     {
@@ -26,16 +20,25 @@ namespace Shotgun.Classes
         }
         public bool CanShoot()
         {
-            return Bullets > 0;
+            if (Bullets > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        public void Shotgung()
+        public bool Shotgun()
         {
             if (Bullets > 2)
             {
                 Bullets -= 3;
-                //Bullets--;
-                //Bullets--;
-            }
+                return true;
+            } else
+            {
+                return false; 
+            }    
         }
 
     }

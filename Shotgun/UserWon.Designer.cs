@@ -32,14 +32,16 @@
             groupBoxRestart = new GroupBox();
             buttonNo = new Button();
             buttonYes = new Button();
+            pictureBox1 = new PictureBox();
             groupBoxRestart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // groupBoxRestart
             // 
             groupBoxRestart.Controls.Add(buttonNo);
             groupBoxRestart.Controls.Add(buttonYes);
-            groupBoxRestart.Location = new Point(254, 323);
+            groupBoxRestart.Location = new Point(244, 415);
             groupBoxRestart.Name = "groupBoxRestart";
             groupBoxRestart.Size = new Size(155, 60);
             groupBoxRestart.TabIndex = 1;
@@ -66,18 +68,32 @@
             buttonYes.UseVisualStyleBackColor = true;
             buttonYes.Click += buttonYes_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(97, 179);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(453, 205);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
             // UserWon
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(647, 647);
+            Controls.Add(pictureBox1);
             Controls.Add(groupBoxRestart);
             Name = "UserWon";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Du vann";
             groupBoxRestart.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -86,5 +102,6 @@
         private GroupBox groupBoxRestart;
         private Button buttonNo;
         private Button buttonYes;
+        private PictureBox pictureBox1;
     }
 }
